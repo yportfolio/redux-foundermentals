@@ -1,4 +1,4 @@
-const initialState = []
+const initialState = [{ id: 0, text: 'what the fuck', complete: false }]
 
 function nextTodoId(todos) {
   const maxId = todos.reduce((maxId, todo) => Math.max(todo.id, maxId), -1)

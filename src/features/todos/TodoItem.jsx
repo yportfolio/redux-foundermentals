@@ -30,16 +30,15 @@ const TodoItem = ({ todo, onColorChange, onCompletedChange, onDelete }) => {
           />
           <div className="todo-text">{text}</div>
         </div>
-        <div className="segment button">
+        <div className="segment buttons">
           <select
-            name=""
-            id=""
             className="colorPicker"
             value={color}
             style={{ color }}
             onChange={handleColorChanged}
           >
-            <option value="">{colorOptions}</option>
+            <option value=""></option>
+            {colorOptions}
           </select>
           <button className="destroy" onClick={onDelete}>
             <TimesSolid />
