@@ -71,10 +71,9 @@ const ColorFilters = ({ value: colors, onChange }) => {
 const Footer = () => {
   const dispatch = useDispatch()
   const { status, colors } = useSelector((state) => state.filters)
+
   const todoRemaining = useSelector((state) => {
-    const uncompletedTodos = state.todos.filter(
-      (todo) => todo.complete === false
-    )
+    const uncompletedTodos = state.todos.filter((todo) => !todo.completed)
     return uncompletedTodos.length
   })
 
