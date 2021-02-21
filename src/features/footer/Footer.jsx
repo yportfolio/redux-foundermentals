@@ -73,7 +73,7 @@ const Footer = () => {
   const { status, colors } = useSelector((state) => state.filters)
 
   const todoRemaining = useSelector((state) => {
-    const uncompletedTodos = state.todos.filter((todo) => !todo.completed)
+    const uncompletedTodos = state.todos.filter((todo) => !todo.complete)
     return uncompletedTodos.length
   })
 

@@ -23,24 +23,22 @@ export default function todosReducer(state = initialState, action) {
         {
           id: nextTodoId(state),
           text: action.payload,
-          completed: false,
+          complete: false,
         },
       ]
     }
 
     case 'todos/todoToggled': {
-      return [
-        state.map((todo) => {
-          if (todo.id !== action.payload) {
-            return todo
-          } else {
-            return {
-              ...todo,
-              completed: !todo.completed,
-            }
+      return state.map((todo) => {
+        if (todo.id !== action.payload) {
+          return todo
+        } else {
+          return {
+            ...todo,
+            complete: !todo.complete,
           }
-        }),
-      ]
+        }
+      })
     }
 
     case 'todos/colorSelected': {
@@ -62,11 +60,12 @@ export default function todosReducer(state = initialState, action) {
     }
 
     case 'todos/allCompleted': {
-      return state.map((todo) => ({ ...todo, completed: true }))
+      console.log('state', state)
+      return state.map((todo) => ({ ...todo, complete: true }))
     }
 
     case 'todos/completedCleared': {
-      return state.filter((todo) => !todo.completed)
+      return state.filter((todo) => !todo.complete)
     }
 
     default:

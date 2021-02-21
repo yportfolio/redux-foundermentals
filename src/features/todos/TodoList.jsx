@@ -4,7 +4,6 @@ import TodoItem from './TodoItem'
 
 const TodoList = () => {
   const todos = useSelector((state) => state.todos)
-  console.log('todolist', todos)
 
   // since `todos` is an array, we can loop over it
   const renderedTodoList = todos.map((todo) => (
